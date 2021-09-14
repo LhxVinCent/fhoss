@@ -22,6 +22,15 @@
 	<property name="zh_uicc_type" type="int"/>
 	<property name="zh_key_life_time" type="int"/>	
 	<property name="zh_default_auth_scheme" type="int"/>
-		
+
+	<!--
+	添加一对多映射
+	-->
+	<set name="impuHashSet">
+		<key column="impi_impu_id"/>
+		<one-to-many class="de.fhg.fokus.hss.db.model.IMPU"/>
+	</set>
+
+
 </class>
 </hibernate-mapping>

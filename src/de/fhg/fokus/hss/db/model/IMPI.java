@@ -44,6 +44,8 @@
 package de.fhg.fokus.hss.db.model;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import de.fhg.fokus.hss.cx.CxConstants;
 
@@ -71,6 +73,20 @@ public class IMPI implements Serializable{
 	private int zh_uicc_type;
 	private int zh_key_life_time;
 	private int zh_default_auth_scheme;
+
+	/*添加impu一对多映射关系*/
+
+	private Set<IMPU> impuHashSet = new HashSet<IMPU>();
+
+	public Set<IMPU> getImpuHashSet()
+	{
+		return impuHashSet;
+	}
+
+	public void setImpuHashSet(Set<IMPU> impuHashSet)
+	{
+		this.impuHashSet = impuHashSet;
+	}
 	
 	public IMPI(){}
 

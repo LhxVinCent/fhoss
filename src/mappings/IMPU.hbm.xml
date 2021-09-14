@@ -20,7 +20,14 @@
 	<property name="can_register" type="int" />	
 	
 	<property name="id_sp" type="int" />	
-	<property name="id_charging_info" type="int" />	
+	<property name="id_charging_info" type="int" />
+
+	<!--
+	添加一对多映射
+	-->
+
+    <many-to-one name="impi" class="de.fhg.fokus.hss.db.model.IMPI" column="impi_impu_id"/>
+
 
 </class>
 </hibernate-mapping>

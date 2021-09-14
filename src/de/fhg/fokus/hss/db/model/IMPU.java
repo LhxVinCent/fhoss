@@ -43,6 +43,7 @@
 package de.fhg.fokus.hss.db.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import org.apache.log4j.Logger;
 
@@ -82,8 +83,20 @@ public class IMPU implements Serializable{
 	
 	// flag indicating if an update occured for the associated SP	
 	private boolean sp_dirtyFlag = false;
-	
+    /*添加impi对象，主要为了添加一对多映射*/
+	private IMPI impi;
+
 	public IMPU(){
+	}
+
+	public void setImpi(IMPI impi)
+	{
+		this.impi = impi;
+	}
+
+	public IMPI getImpi()
+	{
+		return this.impi;
 	}
 
 	public int getBarring() {
